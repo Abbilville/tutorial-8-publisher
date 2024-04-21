@@ -22,3 +22,8 @@ Screenshoot terminal publisher dimana telah berhasil menjalankan <code>cargo run
 
 Screenshot interface RabbitMQ dimana ada spike pada message rates yang disebabkan karena saya menjalankan publisher berkali-kali. Spike pada chart menandakan bahwa saya telah menjalankan program publisher dengan <code>cargo run</code> <br>
 ![alt text](assets/image/image4.png) <br><br>
+
+Ada beberapa perbaikan yang dapat dilakukan pada kode ini: <br>
+1. Saat ini, hasil dari <code>publish_event</code> diabaikan dengan _ =. Lebih baik menangani potensi kesalahan ini dengan benar.
+2. Metode <code>publish_event</code> dipanggil beberapa kali dengan argumen yang serupa. Ini bisa direfactor menjadi loop atau fungsi untuk mengurangi duplikasi kode.
+3. String koneksi dan nama event dikodekan secara langsung. Lebih baik memindahkan ini ke dalam file konfigurasi atau environment variables.
